@@ -1,5 +1,3 @@
-
-
 function giveMeAString() {
   return 4; // TODO: Fix the return type
 }
@@ -22,9 +20,22 @@ function addTwoNumbers(numberOne, numberTwo) {
   // TODO: Fill in this function
 }
 
+function divideTwoNumbers(numberOne, numberTwo) {
+  // TODO: Fill in this function
+}
+function subtractTwoNumbers(numberOne, numberTwo) {
+  // TODO: Fill in this function
+}
+
+function numberToPower(number, exponent) {}
+
+function checkIfEven(number) {
+  // TODO: Fill in this function
+}
+
 function callMyFunction() {
   function myFunction() {
-    return 'Howdy world!'
+    return 'Howdy world!';
   }
   return; // TODO: Invoke 'myFunction'
 }
@@ -51,21 +62,33 @@ function giveMeAnyOtherFruit() {
 //                                                                                   __/ |
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 const wrap = (message, func) => {
-  return function(...args) {
-    console.log('\n', `${func.name}: ${message}`);
+  return function (...args) {
+    console.log('\n', `    ${func.name}: ${message}`);
     return func(...args);
-  }
-}
-
+  };
+};
 
 // VVV Ignore all of this business VVV
 export default {
   giveMeAString: wrap('I need a string.', giveMeAString),
   giveMeANumber: wrap('I need a number.', giveMeANumber),
-  giveMeUndefined: wrap('I don\'t need anything.', giveMeUndefined),
-  addToMakeFour: wrap('I need to equal four, but I don\'t. Fix me? uwu', addToMakeFour),
-  addTwoNumbers: wrap('Make these two bitches do smooth brain math', addTwoNumbers),
-  giveMeAnyOtherFruit: wrap('I don\'t like durians. Give me another fruit.', giveMeAnyOtherFruit)
-}
+  giveMeUndefined: wrap("I don't need anything.", giveMeUndefined),
+  addToMakeFour: wrap(
+    "I need to equal four, but I don't. Fix me? uwu",
+    addToMakeFour
+  ),
+  addTwoNumbers: wrap(
+    'Make these two bitches do smooth brain math',
+    addTwoNumbers
+  ),
+  subtractTwoNumbers,
+  divideTwoNumbers,
+  numberToPower,
+  checkIfEven,
+  giveMeAnyOtherFruit: wrap(
+    "I don't like durians. Give me another fruit.",
+    giveMeAnyOtherFruit
+  ),
+  callMyFunction: wrap('Call my little function.', callMyFunction),
+};

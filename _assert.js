@@ -1,39 +1,65 @@
+const correct = (msg) => {
+  console.log(`         [✅] ${msg}`);
+};
+const incorrect = (msg) => {
+  console.log(`         [❌] ${msg}`);
+};
 
-const expecting = (result) => {
+export const expecting = (result) => {
   return {
-    toEqual: function(expected) {
+    toEqual: function (expected) {
       if (result === expected) {
         // poggers
-        console.log(`    [✅] Nice! Got ${expected}. Keep it 💯, zoomer`)
+        correct(`Nice! Got ${expected}. Keep it 💯, zoomer`);
       } else {
-        console.error(`    [❌] Expected ${expected} but got ${result}.`);
+        incorrect(`Expected ${expected} but got ${result}.`);
       }
     },
-    toBeAString: function() {
+    toBeAString: function () {
       if (typeof result === 'string') {
         // poggers
-        console.log(`    [✅] Nice! Got a string.`)
+        correct(`Nice! Got a string.`);
       } else {
-        console.error(`    [❌] This isn't a string!!!!`);
+        incorrect(`This isn't a string!!!!`);
       }
     },
-    toBeANumber: function() {
+    toBeANumber: function () {
       if (typeof result === 'number') {
         // poggers
-        console.log(`    [✅] Nice! Got a string.`)
+        correct(`Nice! Got a string.`);
       } else {
-        console.error(`    [❌] This is NOT a number`);
+        incorrect(`This is NOT a number`);
       }
     },
-    toBeUndefined: function() {
+    toBeUndefined: function () {
       if (typeof result === 'undefined') {
         // poggers
-        console.log(`    [✅] Nice! Got undefined. Exactly what I needed.`)
+        correct(`Nice! Got undefined. Exactly what I needed.`);
       } else {
-        console.error(`    [❌] It's not undefined!!!!`);
+        incorrect(`It's not undefined!!!!`);
       }
-    }
-  }
-}
+    },
+  };
+};
 
-export default expecting;
+export const test = (message, callback) => {
+  console.log('\n-------------------------', '\n', '👉😎👉', message);
+  callback();
+};
+
+export const spy = (obj, method) => {
+  let spy = {
+    count: 0,
+    args: [],
+  };
+
+  let original = obj[method];
+  obj[method] = function () {
+    let args = [].slice.apply(arguments);
+    spy.count++;
+    spy.args.push(args);
+    return original(...args);
+  };
+
+  return spy;
+};
