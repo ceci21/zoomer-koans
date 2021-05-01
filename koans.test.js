@@ -147,6 +147,21 @@ define('if statements', () => {
 });
 
 define('for loops', () => {
+  test("acknowledgeGokuDrip: log 'goku drip' 10 times using a for loop", () => {
+    const logSpy = spy(console, 'log');
+    acknowledgeGokuDrip();
+    let dripCounter = 0;
+    logSpy.args.forEach(([arg]) => {
+      if (arg === 'goku drip') {
+        dripCounter++;
+      }
+    });
+    expecting(dripCounter).toEqual(10);
+  });
+
+  test('giveMeAnArrayOfNumbers: fill an array of numbers 1 through 5', () => {
+    expecting(giveMeAnArrayOfNumbers()).toDeepEqual([1, 2, 3, 4, 5])
+  })
   // add content in for loop to print out number 5 10 times
   // add missing initializer
   // add missing condition
