@@ -1,6 +1,46 @@
+
 ////////////
-//  types
+//  math
 ////////////
+
+function addToMakeFour() {
+  // TODO: Fix me!
+  return 2 + 1;
+}
+
+function addTwoNumbers(numberOne, numberTwo) {
+  // TODO: Fill in this function
+}
+
+function divideTwoNumbers(numberOne, numberTwo) {
+  // TODO: Fill in this function
+}
+
+function subtractTwoNumbers(numberOne, numberTwo) {
+  // TODO: Fill in this function
+}
+
+function numberToPower(number, exponent) {
+  // TODO: Fill in this function
+}
+
+function checkIfEven(number) {
+  // TODO: Fill in this function
+}
+
+function checkIfOdd(number) {
+  // TODO: Fill in this function
+}
+
+
+
+
+
+
+////////////////////
+// having a type
+///////////////////
+
 function giveMeAString() {
   return 4; // TODO: Fix the return type
 }
@@ -29,68 +69,33 @@ function giveMeAFunction() {
   return null; // TODO: Fix the return type
 }
 
+function youAreAllTurkeys() {
+  /*
+    TODO: Fix this function so it takes a name and returns a string telling them they're a little turkey.
+    Example 1:
+      Input: "Kevin"
+      Output: "You're a little turkey, Kevin."
+    Example 2:
+      Input: "Josh"
+      Output: "You're a little turkey, Josh."
+  */
+}
+
 function simpingOnWeekends() {
   // TODO: I'm trying to cut back on simping to weekends only. Help me reduce my simping habit
   var daysOfWeekImSimpin = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   return daysOfWeekImSimpin;
 }
 
-////////////
-//  for loops
-////////////
-function acknowledgeGokuDrip() {
-  for (var i = 1; i <= 10; i++) {
-    // TODO: Fill this in so this function logs to the console "goku drip" 10 times
-  }
-}
-
-function giveMeAnArrayOfNumbers() {
-  var numbers = [];
-  for (var x = 0; x < 5; x++) {
-    // TODO: Fill this in so the function returns an array with the numbers 1 through 5.
-  }
-  return numbers;
-}
-
-function flipMyArrayOfNumbers() {
-  var numbers = [];
-  for (var x = 0; x < 5; x++) {
-    // TODO: Fill this in so the function returns an array starting from 5 and going down to 1.
-  }
-  return numbers;
-}
-
-function
-
-////////////
-//  math
-////////////
-
-// I need to equal four, but I don't. uwu
-function addToMakeFour() {
-  // TODO: Fix me!
-  return 2 + 1;
-}
-
-function addTwoNumbers(numberOne, numberTwo) {
-  // TODO: Fill in this function
-}
-
-function divideTwoNumbers(numberOne, numberTwo) {
-  // TODO: Fill in this function
-}
-function subtractTwoNumbers(numberOne, numberTwo) {
-  // TODO: Fill in this function
-}
-
-function numberToPower(number, exponent) {
-  // TODO: Fill in this function
-}
 
 
-//////////////////////////////
+
+
+
+/////////////////////////////////
 // if statements and conditionals
-//////////////////////////////
+/////////////////////////////////
+
 function makeItTrue() {
   if (false) { // Fix this conditional
     return "Yes, my dreams have come true! I'm a little pogchamp!";
@@ -99,13 +104,6 @@ function makeItTrue() {
   }
 }
 
-function makeItFalse() {
-  if (true) { // TODO: Fix this conditional
-    return '...';
-  } else {
-    return "Yes, my dreams have come true! I'm a little pogchamp!";
-  }
-}
 
 function makeItBigger() {
   if (5 > 7) { // TODO: Fix this conditional
@@ -119,17 +117,22 @@ function makeItSmaller() {
   }
 }
 
-function checkIfEven(number) {
-  // TODO: Fill in this function
+function isPogchampEnabled(pogchampEnabled) {
+  if (false) { // TODO: Fix this conditional
+    return "Yes, my dreams have come true! I'm a little pogchamp!";
+  } else if (false) {  // TODO: And fix this conditional
+    return "Maybe I can be a little pogchamp tomorrow";
+  }
 }
 
-function checkIfOdd(number) {
-  // TODO: Fill in this function
+function whichParameterIsBigger(param1, param2, param3) {
+  // TODO: Using conditionals, return the biggest parameter.
 }
+
 
 function makeItLessRedundant() {
   function redundantBlock(trueStatement) {
-    // TODO: Shorten the number of lines in this function to 1 line.
+    // TODO: Shorten the number of lines in this function 'redundantBlock' to 1 line.
     if (statement === true) {
       return true;
     } else {
@@ -140,13 +143,17 @@ function makeItLessRedundant() {
   return redundantBlock;
 }
 
+
+
+
+
 ///////////////
 // functions
 ///////////////
 
 function callMyFunction() {
   function myFunction() {
-    return 'suh world';
+    return '"that\'s how it is on this bitch of an earth"';
   }
   return; // TODO: Invoke 'myFunction'
 }
@@ -174,6 +181,64 @@ function passInArguments() {
   return argueWithMe(45); // TODO: Fill the missing arguments
 }
 
+
+
+
+//////////////
+//  for loops
+//////////////
+
+function acknowledgeGokuDrip() {
+  for (var i = 0; i < 10; i++) {
+    // TODO: Fill this in so this function logs to the console "goku drip" 10 times
+  }
+}
+
+function giveMeAnArrayOfNumbers() {
+  var numbers = [];
+  for (var x = 0; x < 5; x++) {
+    // TODO: Fill this in so the function returns an array with the numbers 1 through 5.
+  }
+  return numbers;
+}
+
+function flipMyArrayOfNumbers() {
+  var numbers = [];
+  for (var x = 0; x < 5; x++) {
+    // TODO: Fill this for loop in so the function returns an array starting from 5 and going down to 1.
+  }
+  return numbers;
+}
+
+function addUpAmountOnReceipt(itemizedTotals) {
+  // TODO: Write a function that adds all of the amounts in a paycheck and returns the sum.
+
+}
+
+function noAInYourNameMafia(peopleInVC) {
+  var peopleInVC = ['Austin', 'Bennett', 'Cameron', 'Josh', 'Zach'];
+  for (let p = 2; p < peopleInVC; p = p - 1) {
+    // TODO: There are several things wrong with this for loop.
+    // Fix it so people who have the letter 'a' in their names get kicked from VC, and return that resulting array.
+  }
+  return;
+}
+
+function pyramidOfStars() {
+  /*
+    TODO: Use a for loop to generate a shallow period of stars. Return as a string;
+    Expected output:
+    *
+    **
+    ***
+    ****
+    ***
+    **
+    *
+  */
+}
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // _           _   _                        _          __  __   _       _ _ _                  _
 // | |         | | | |                      | |        / _|/ _| (_)     (_) | |                | |
@@ -184,24 +249,19 @@ function passInArguments() {
 //                                                                                   __/ |
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-const wrap = (message, func) => {
-  return function (...args) {
-    console.log('\n', `    ${func.name}: ${message}`);
-    return func(...args);
-  };
-};
 
-// VVV Ignore all of this business VVV
 export default {
-  giveMeAString: wrap('I need a string.', giveMeAString),
-  giveMeANumber: wrap('I need a number.', giveMeANumber),
-  giveMeUndefined: wrap("I don't need anything.", giveMeUndefined),
-  addToMakeFour: wrap("I need to equal four, but I don't. Fix me? uwu", addToMakeFour),
-  addTwoNumbers: wrap('Make these two dudes do smooth brain math', addTwoNumbers),
+  giveMeAString,
+  giveMeANumber,
+  giveMeUndefined,
+  addToMakeFour,
+  addTwoNumbers,
   subtractTwoNumbers,
+  passInArguments,
   divideTwoNumbers,
   numberToPower,
   checkIfEven,
-  giveMeAnyOtherFruit: wrap("I don't like durians. Give me another fruit.", giveMeAnyOtherFruit),
-  callMyFunction: wrap('Call my little function.', callMyFunction),
+  checkIfOdd,
+  giveMeAnyOtherFruit,
+  callMyFunction,
 };

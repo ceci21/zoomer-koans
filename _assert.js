@@ -26,7 +26,7 @@ export const expecting = (result) => {
     toBeANumber: function () {
       if (typeof result === 'number') {
         // poggers
-        correct(`Nice! Got a string.`);
+        correct(`Nice! Got a number.`);
       } else {
         incorrect(`This is NOT a number`);
       }
@@ -43,6 +43,11 @@ export const expecting = (result) => {
 };
 
 export const test = (message, callback) => {
+  console.log('\n    ', message);
+  callback();
+};
+
+export const define = (message, callback) => {
   console.log('\n-------------------------', '\n', '👉😎👉', message);
   callback();
 };
