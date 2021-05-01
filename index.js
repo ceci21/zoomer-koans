@@ -38,6 +38,7 @@ test('if statements', () => {
   // fill in condition for else if
   // fill in content on an else block
   // && and || x3
+  // shorten an if statement using String(function() {})
 })
 
 test('for loops', () => {
