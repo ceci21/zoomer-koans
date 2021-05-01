@@ -32,7 +32,7 @@ const {
   flipMyArrayOfNumbers,
   addUpAmountOnReceipt,
   noAInYourNameMafia,
-  pyramidOfYeezy
+  pyramidOfYeezy,
 } = koans;
 
 define('Smooth brain math', () => {
@@ -92,7 +92,7 @@ define('Testing types', () => {
 
 define('Giving functions a booty call (do zoomers say this?)', () => {
   test('callMyFunction: Call my special little function', () => {
-    expecting(callMyFunction()).toEqual('that\'s how it is on this bitch of an earth');
+    expecting(callMyFunction()).toEqual("that's how it is on this bitch of an earth");
   });
 
   test("giveMeAnyOtherFruit: I don't like durians. Give me another fruit", () => {
@@ -124,22 +124,22 @@ define('if statements', () => {
     expecting(isPogchampEnabled(false)).toEqual('Maybe I can be a little pogchamp tomorrow');
   });
 
-  test("whichParameterIsBigger:", () => {
+  test('whichParameterIsBigger:', () => {
     expecting(whichParameterValueIsBigger()).toEqual(true);
   });
 
-  test('makeItLessRedundant: Shorten the number of lines in function \'redundantBlock\' to 1 line.', () => {
+  test("makeItLessRedundant: Shorten the number of lines in function 'redundantBlock' to 1 line.", () => {
     const str = String(makeItLessRedundant);
-    const regex = /\{/g
+    const regex = /\{/g;
     const matches = str.match(regex);
     expecting(matches.length).to((result, correct, incorrect) => {
       if (result.length === 1 && result.includes('return')) {
-        correct('The function body is one line. Poggers!')
+        correct('The function body is one line. Poggers!');
         // Make sure the function works
         expecting(makeItLessRedundant()(true)).toEqual(true);
         expecting(makeItLessRedundant()(false)).toEqual(false);
       } else {
-        incorrect('Either you haven\'t shortened the function')
+        incorrect("Either you haven't shortened the function");
       }
     });
   });
@@ -160,8 +160,21 @@ define('for loops', () => {
   });
 
   test('giveMeAnArrayOfNumbers: fill an array of numbers 1 through 5', () => {
-    expecting(giveMeAnArrayOfNumbers()).toDeepEqual([1, 2, 3, 4, 5])
-  })
+    expecting(giveMeAnArrayOfNumbers()).toDeepEqual([1, 2, 3, 4, 5]);
+  });
+
+  test('flipMyArrayOfNumbers: using a for loop, function returns an array starting from 5 and down to 1', () => {
+    expecting(flipMyArrayOfNumbers()).toDeepEqual([5, 4, 3, 2, 1]);
+  });
+
+  test("noAInYourNameMafia: Fix it so people who have the letter 'a' in their names get kicked from VC, and return that resulting array.", () => {
+    expecting(noAInYourNameMafia(['Austin', 'Bennett', 'Cameron', 'Josh', 'Zach'])).toDeepEqual([
+      'Bennett',
+      'Josh',
+    ]);
+    expecting(noAInYourNameMafia(['Joseph', 'Jotaro', 'Giorno', 'Josuke'])).toDeepEqual(['Joseph', 'Giorno', 'Josuke']);
+  });
+
   // add content in for loop to print out number 5 10 times
   // add missing initializer
   // add missing condition
