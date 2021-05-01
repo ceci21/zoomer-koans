@@ -125,14 +125,14 @@ function isPogchampEnabled(pogchampEnabled) {
   }
 }
 
-function whichParameterIsBigger(param1, param2, param3) {
+function whichParameterValueIsBigger(param1, param2, param3) {
   // TODO: Using conditionals, return the biggest parameter.
 }
 
 
 function makeItLessRedundant() {
-  function redundantBlock(trueStatement) {
-    // TODO: Shorten the number of lines in this function 'redundantBlock' to 1 line.
+  // TODO: Shorten the number of lines in function 'redundantBlock' to 1 line.
+  function redundantBlock(statement) {
     if (statement === true) {
       return true;
     } else {
@@ -153,7 +153,7 @@ function makeItLessRedundant() {
 
 function callMyFunction() {
   function myFunction() {
-    return '"that\'s how it is on this bitch of an earth"';
+    return 'that\'s how it is on this bitch of an earth';
   }
   return; // TODO: Invoke 'myFunction'
 }
@@ -224,17 +224,17 @@ function noAInYourNameMafia(peopleInVC) {
   return;
 }
 
-function pyramidOfStars() {
+function pyramidOfYeezy() {
   /*
-    TODO: Use a for loop to generate a shallow period of stars. Return as a string;
+    TODO: Use a for loop to generate a shallow pyramid of ye. Return as a string;
     Expected output:
-    *
-    **
-    ***
-    ****
-    ***
-    **
-    *
+    ye
+    yeye
+    yeyeye
+    yeyeyeye
+    yeyeye
+    yeye
+    ye
   */
 }
 
@@ -264,4 +264,22 @@ export default {
   checkIfOdd,
   giveMeAnyOtherFruit,
   callMyFunction,
+  makeItTrue,
+  isPogchampEnabled,
+  makeItBigger,
+  makeItSmaller,
+  makeItLessRedundant,
+  whichParameterValueIsBigger,
+  giveMeANegativeNumber,
+  giveMeAnArray,
+  giveMeAnObject,
+  giveMeAFunction,
+  youAreAllTurkeys,
+  simpingOnWeekends,
+  acknowledgeGokuDrip,
+  giveMeAnArrayOfNumbers,
+  flipMyArrayOfNumbers,
+  addUpAmountOnReceipt,
+  noAInYourNameMafia,
+  pyramidOfYeezy
 };

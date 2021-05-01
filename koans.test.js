@@ -1,4 +1,4 @@
-import { define, expecting, test, spy } from './_assert.js';
+import { define, expecting, test, spy } from './lib/assert.js';
 import koans from './koans.js';
 
 const {
@@ -16,11 +16,23 @@ const {
   giveMeAnyOtherFruit,
   callMyFunction,
   makeItTrue,
-  enablePogchamp,
+  isPogchampEnabled,
   makeItBigger,
   makeItSmaller,
   makeItLessRedundant,
-  whichParameterIsBigger,
+  whichParameterValueIsBigger,
+  giveMeANegativeNumber,
+  giveMeAnArray,
+  giveMeAnObject,
+  giveMeAFunction,
+  youAreAllTurkeys,
+  simpingOnWeekends,
+  acknowledgeGokuDrip,
+  giveMeAnArrayOfNumbers,
+  flipMyArrayOfNumbers,
+  addUpAmountOnReceipt,
+  noAInYourNameMafia,
+  pyramidOfYeezy
 } = koans;
 
 define('Smooth brain math', () => {
@@ -31,6 +43,11 @@ define('Smooth brain math', () => {
   test('addTwoNumbers: You earn a wrinkle if you do this right', () => {
     expecting(addTwoNumbers(98, 2)).toEqual(100);
     expecting(addTwoNumbers(-24, 24)).toEqual(0);
+  });
+
+  test('subtractTwoNumbers: You earn two wrinkles if you do this right', () => {
+    expecting(subtractTwoNumbers(98, 2)).toEqual(96);
+    expecting(subtractTwoNumbers(-15, -20)).toEqual(5);
   });
 
   test('divideTwoNumbers: Divide two numbers', () => {
@@ -64,14 +81,18 @@ define('Testing types', () => {
     expecting(giveMeANumber()).toBeANumber();
   });
 
-  test('giveMeUndefined: I want anything', () => {
+  test('giveMeANegativeNumber: I need a number, only negative', () => {
+    expecting(giveMeANegativeNumber()).toBeNegative();
+  });
+
+  test('giveMeUndefined: I want nothing', () => {
     expecting(giveMeUndefined()).toBeUndefined();
   });
 });
 
-define('Giving functions a (booty) call heh heh', () => {
+define('Giving functions a booty call (do zoomers say this?)', () => {
   test('callMyFunction: Call my special little function', () => {
-    expecting(callMyFunction()).toEqual('"that\'s how it is on this bitch of an earth"');
+    expecting(callMyFunction()).toEqual('that\'s how it is on this bitch of an earth');
   });
 
   test("giveMeAnyOtherFruit: I don't like durians. Give me another fruit", () => {
@@ -93,7 +114,7 @@ define('if statements', () => {
   });
 
   test('makeItSmaller:', () => {
-    expecting(makeItBigmakeItSmallerger()).toEqual(true);
+    expecting(makeItSmaller()).toEqual(true);
   });
 
   test('isPogchampEnabled: Make it true', () => {
@@ -104,10 +125,25 @@ define('if statements', () => {
   });
 
   test("whichParameterIsBigger:", () => {
-    expecting(whichParameterIsBigger()).toEqual(true);
+    expecting(whichParameterValueIsBigger()).toEqual(true);
+  });
+
+  test('makeItLessRedundant: Shorten the number of lines in function \'redundantBlock\' to 1 line.', () => {
+    const str = String(makeItLessRedundant);
+    const regex = /\{/g
+    const matches = str.match(regex);
+    expecting(matches.length).to((result, correct, incorrect) => {
+      if (result.length === 1 && result.includes('return')) {
+        correct('The function body is one line. Poggers!')
+        // Make sure the function works
+        expecting(makeItLessRedundant()(true)).toEqual(true);
+        expecting(makeItLessRedundant()(false)).toEqual(false);
+      } else {
+        incorrect('Either you haven\'t shortened the function')
+      }
+    });
   });
   // && and || x3
-  // shorten an if statement using String(function() {})
 });
 
 define('for loops', () => {
