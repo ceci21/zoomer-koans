@@ -206,7 +206,7 @@ function giveMeAnArrayOfNumbers() {
 function flipMyArrayOfNumbers() {
   var numbers = [];
   for (var x = 0; x < 5; x++) {
-    // TODO: Fill this for loop in so the function returns an array starting from 5 and going down to 1.
+    // TODO: Fill this for loop in so the function returns an array starting from 5 and goes down to 1.
   }
   return numbers;
 }
@@ -217,12 +217,16 @@ function addUpAmountOnReceipt(itemizedTotals) {
 }
 
 function noAInYourNameMafia(peopleInVC) {
-  var peopleInVC = ['Austin', 'Bennett', 'Cameron', 'Josh', 'Zach'];
   for (let p = 2; p < peopleInVC; p = p - 1) {
     // TODO: There are several things wrong with this for loop.
     // Fix it so people who have the letter 'a' in their names get kicked from VC, and return that resulting array.
   }
   return;
+}
+
+function kickZachFromVC(peopleInVC) {
+  // TODO: Without creating a new array, kick Zach from VC.
+  return peopleInVC;
 }
 
 function pyramidOfYeezy() {
@@ -282,5 +286,6 @@ export default {
   flipMyArrayOfNumbers,
   addUpAmountOnReceipt,
   noAInYourNameMafia,
-  pyramidOfYeezy
+  pyramidOfYeezy,
+  kickZachFromVC
 };

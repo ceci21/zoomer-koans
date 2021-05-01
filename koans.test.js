@@ -33,6 +33,7 @@ const {
   addUpAmountOnReceipt,
   noAInYourNameMafia,
   pyramidOfYeezy,
+  kickZachFromVC
 } = koans;
 
 define('Smooth brain math', () => {
@@ -167,12 +168,44 @@ define('for loops', () => {
     expecting(flipMyArrayOfNumbers()).toDeepEqual([5, 4, 3, 2, 1]);
   });
 
+  test('addUpAmountOnReceipt: Write a function that adds all of the amounts in a paycheck and returns the sum', () => {
+    expecting(addUpAmountOnReceipt([16.99, 21.0, 5.0, 1.5])).toEqual(44.49);
+    expecting(addUpAmountOnReceipt([])).toEqual(0);
+  });
+
   test("noAInYourNameMafia: Fix it so people who have the letter 'a' in their names get kicked from VC, and return that resulting array.", () => {
     expecting(noAInYourNameMafia(['Austin', 'Bennett', 'Cameron', 'Josh', 'Zach'])).toDeepEqual([
       'Bennett',
       'Josh',
     ]);
-    expecting(noAInYourNameMafia(['Joseph', 'Jotaro', 'Giorno', 'Josuke'])).toDeepEqual(['Joseph', 'Giorno', 'Josuke']);
+    expecting(noAInYourNameMafia(['Joseph', 'Jotaro', 'Giorno', 'Josuke'])).toDeepEqual([
+      'Joseph',
+      'Giorno',
+      'Josuke',
+    ]);
+  });
+
+  test('kickZachFromVC: Without creating a new array, kick Zach from VC', () => {
+    var peopleInVC = ['Austin', 'Bennett', 'Cameron', 'Josh', 'Zach', 'UK Cameron', 'Ethan'];
+    expecting(kickZachFromVC(peopleInVC)).toDeepEqual([
+      'Austin',
+      'Bennett',
+      'Cameron',
+      'Josh',
+      'UK Cameron',
+      'Ethan',
+    ]);
+    expecting(kickZachFromVC(peopleInVC)).to((result, correct, incorrect) => {
+      if (result === peopleInVC) {
+        correct('Yay! You gave back the array I passed in. 🎉');
+      } else {
+        incorrect('You did not give back the array I passed in. You boomer! 🥴');
+      }
+    });
+  });
+
+  test('pyramidOfYeezy: Use a for loop to generate a shallow pyramid of ye. Return as string', () => {
+    expecting(pyramidOfYeezy()).toEqual('ye\nyeye\nyeyeye\nyeyeyeye\nyeyeye\nyeye\nye');
   });
 
   // add content in for loop to print out number 5 10 times
