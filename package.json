@@ -7,6 +7,5 @@
     "start": "node koans.test.js"
   },
   "author": "",
-  "license": "ISC",
-  "type": "module"
+  "license": "ISC"
 }

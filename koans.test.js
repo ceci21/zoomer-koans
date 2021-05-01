@@ -1,6 +1,7 @@
 import { define, expecting, test, spy } from './lib/assert.js';
 import koans from './koans.js';
 
+
 const {
   giveMeAString,
   giveMeANumber,
@@ -56,24 +57,24 @@ define('Smooth brain math', () => {
     expecting(divideTwoNumbers(6322, 8)).toEqual(790.25);
   });
 
-  test('numberToPower: exponentiating something', () => {
+  test('numberToPower: Function for making a number a power of something', () => {
     expecting(numberToPower(2, 16)).toEqual(65536);
     expecting(numberToPower(1, 1)).toEqual(1);
     expecting(numberToPower(1, 0)).toEqual(1);
   });
 
-  test('checkIfEven: check if even', () => {
+  test('checkIfEven: Check if a number is even', () => {
     expecting(checkIfEven(6)).toEqual(true);
     expecting(checkIfEven(91)).toEqual(false);
   });
 
-  test('checkIfOdd: check if odd', () => {
+  test('checkIfOdd: Check if a number is odd', () => {
     expecting(checkIfOdd(69)).toEqual(true);
     expecting(checkIfOdd(4)).toEqual(false);
   });
 });
 
-define('Testing types', () => {
+define('Getting to know basic types', () => {
   test('giveMeAString: I need a string', () => {
     expecting(giveMeAString()).toBeAString();
   });
@@ -89,6 +90,27 @@ define('Testing types', () => {
   test('giveMeUndefined: I want nothing', () => {
     expecting(giveMeUndefined()).toBeUndefined();
   });
+
+  test('giveMeAnArray: I want an array', () => {
+    expecting(giveMeAnArray()).toBeAnArray();
+  });
+
+  test('giveMeAnObject: I want an object', () => {
+    expecting(giveMeAnObject()).toBeAnObject();
+  });
+
+  test('giveMeAFunction: I want a function', () => {
+    expecting(giveMeAFunction()).toBeAFunction();
+  });
+
+  test('youAreAllTurkeys: Fill out this function so it takes in a name and tells you you\'re a little turkey', () => {
+    expecting(youAreAllTurkeys('Lauren')).toEqual("You're a little turkey, Lauren.");
+    expecting(youAreAllTurkeys('Francisco')).toEqual("You're a little turkey, Francisco.");
+  });
+
+  test('simpingOnWeekends: Help me fix my simping habit', () => {
+    expecting(simpingOnWeekends()).toDeepEqual(['Sunday', 'Saturday'])
+  })
 });
 
 define('Giving functions a booty call (do zoomers say this?)', () => {
@@ -100,33 +122,35 @@ define('Giving functions a booty call (do zoomers say this?)', () => {
     expecting(giveMeAnyOtherFruit()).toEqual(true);
   });
 
-  test("passInArguments: It's polite to argue", () => {
+  test("passInArguments: It's polite to argue in the context of programming", () => {
     expecting(passInArguments()).toEqual(true);
   });
 });
 
-define('if statements', () => {
+define('If statements', () => {
   test('makeItTrue: Make it true', () => {
     expecting(makeItTrue()).toEqual("Yes, my dreams have come true! I'm a little pogchamp!");
   });
 
-  test('makeItBigger:', () => {
+  test(`makeItBigger: Fix the comparison operator so it's correct`, () => {
     expecting(makeItBigger()).toEqual(true);
   });
 
-  test('makeItSmaller:', () => {
+  test(`makeItSmaller: Fix the comparison operator so it's correct`, () => {
     expecting(makeItSmaller()).toEqual(true);
   });
 
-  test('isPogchampEnabled: Make it true', () => {
+  test('isPogchampEnabled: Make my pogchamp dreams come true', () => {
     expecting(isPogchampEnabled(true)).toEqual(
       "Yes, my dreams have come true! I'm a little pogchamp!"
     );
     expecting(isPogchampEnabled(false)).toEqual('Maybe I can be a little pogchamp tomorrow');
   });
 
-  test('whichParameterIsBigger:', () => {
-    expecting(whichParameterValueIsBigger()).toEqual(true);
+  test('whichParameterValueIsBigger: Put 3 numbers in as arguments and give back the biggest one', () => {
+    expecting(whichParameterValueIsBigger(62, 1, 98)).toEqual(98);
+    expecting(whichParameterValueIsBigger(2, 1, 0)).toEqual(2);
+    expecting(whichParameterValueIsBigger(-14, -11, -18)).toEqual(-11);
   });
 
   test("makeItLessRedundant: Shorten the number of lines in function 'redundantBlock' to 1 line.", () => {
@@ -140,14 +164,14 @@ define('if statements', () => {
         expecting(makeItLessRedundant()(true)).toEqual(true);
         expecting(makeItLessRedundant()(false)).toEqual(false);
       } else {
-        incorrect("Either you haven't shortened the function");
+        incorrect("Expected 1 line in the function body");
       }
     });
   });
-  // && and || x3
 });
 
-define('for loops', () => {
+
+define('For loops', () => {
   test("acknowledgeGokuDrip: log 'goku drip' 10 times using a for loop", () => {
     const logSpy = spy(console, 'log');
     acknowledgeGokuDrip();
@@ -205,35 +229,41 @@ define('for loops', () => {
   });
 
   test('pyramidOfYeezy: Use a for loop to generate a shallow pyramid of ye. Return as string', () => {
-    expecting(pyramidOfYeezy()).toEqual('ye\nyeye\nyeyeye\nyeyeyeye\nyeyeye\nyeye\nye');
+    expecting(pyramidOfYeezy()).to((result, correct, incorrect) => {
+      if (result === 'ye\nyeye\nyeyeye\nyeyeyeye\nyeyeye\nyeye\nye') {
+        correct(`Pyramid of Ye complete.`)
+      } else {
+        incorrect(`Expected a pyramid of 'ye' that looks like this:` + `
+            ye
+            yeye
+            yeyeye
+            yeyeyeye
+            yeyeye
+            yeye
+            ye
+        `)
+      }
+    });
   });
-
-  // add content in for loop to print out number 5 10 times
-  // add missing initializer
-  // add missing condition
-  // add missing ending condition
-  // create all 3
-  // log elements of an array
-  // log a number if its odd only
 });
 
-define('while loops', () => {
-  // add content to while loop
-  // add condition to while loop
-  // infinite loop (can i prevent this from going out of hand?)
-});
+// define('while loops', () => {
+//   // add content to while loop
+//   // add condition to while loop
+//   // infinite loop (can i prevent this from going out of hand?)
+// });
 
-define('Arrays', () => {
-  // fill in array numbers 1-5
-  // access property on an array
-  // modify variable to access property on an array
-  // push a value onto array
-});
+// define('Arrays', () => {
+//   // fill in array numbers 1-5
+//   // access property on an array
+//   // modify variable to access property on an array
+//   // push a value onto array
+// });
 
-define('Objects', () => {
-  // create an empty object
-  // modify property on an object
-  // add a property on an object
-  // access property with dot notation
-  // access property with bracket notation
-});
+// define('Objects', () => {
+//   // create an empty object
+//   // modify property on an object
+//   // add a property on an object
+//   // access property with dot notation
+//   // access property with bracket notation
+// });
