@@ -12,6 +12,7 @@ export function howManyKills() {
 ////////////
 //  objects
 ////////////
+
 const chat_data = {
   channel: `general`,
   messages: [
@@ -78,23 +79,25 @@ You have access to the server messages and can execute actions, including the on
 */
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-export function reactToMessage() {
+
+export function sendMessage() {
   /*
-    TODO: Ninjafox2013's misspelling of "house" was funny to you, and you want to react to it with your favorite emote, :pepe_snicker:.
-    The property that describes what reactions are tied to a particular message is `emotes`, which takes an array of emotes as strings.
-    Using code, react to that message with :pepe_snicker:.
-    */
+    TODO: Add a message to the chat. You could do it through the UI, but you decide to do it in code
+    because you'll "feel more like a hacker".
+  */
 }
 
 export function reactToMessage() {
   /*
-    TODO: Ninjafox2013's misspelling of "house" was funny to you, and you want to react to it with your favorite emote, :pepe_snicker:.
-    The property that describes what reactions are tied to a particular message is `emotes`, which takes an array of emotes as strings.
-    Using code, react to that message with :pepe_snicker:.
-    */
+  TODO: Ninjafox2013's misspelling of "house" was funny to you, and you want to react to it with your favorite emote, :pepe_snicker:.
+  The property that describes what reactions are tied to a particular message is `emotes`, which takes an array of emotes as strings.
+  Using code, react to that message with :pepe_snicker:.
+  */
 }
+
 
 export function printMessages() {
+  // TODO: Print all of the messages in the chat using depth-first traversal.
 }
 
 export function banAndDeleteBadBoy() {
