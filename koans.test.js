@@ -1,6 +1,5 @@
-import { define, expecting, test, spy } from './lib/assert.js';
-import koans from './koans.js';
-
+const { define, expecting, test, spy } = require('./lib/assert.js')
+const koans = require('./koans.js')
 
 const {
   giveMeAString,
@@ -154,11 +153,11 @@ define('If statements', () => {
   });
 
   test("makeItLessRedundant: Shorten the number of lines in function 'redundantBlock' to 1 line.", () => {
-    const str = String(makeItLessRedundant);
-    const regex = /\{/g;
-    const matches = str.match(regex);
-    expecting(matches.length).to((result, correct, incorrect) => {
-      if (result.length === 1 && result.includes('return')) {
+    const str = String(makeItLessRedundant());
+    const regex = /\{([\w|\W]*)\}/;
+    const matches = str.match(regex)[1]?.split('\n').filter(_ => _.trim()) ?? [];
+    expecting(matches).to((result, correct, incorrect) => {
+      if (result.length === 1 && result[0].includes('return')) {
         correct('The function body is one line. Poggers!');
         // Make sure the function works
         expecting(makeItLessRedundant()(true)).toEqual(true);
@@ -230,6 +229,7 @@ define('For loops', () => {
 
   test('pyramidOfYeezy: Use a for loop to generate a shallow pyramid of ye. Return as string', () => {
     expecting(pyramidOfYeezy()).to((result, correct, incorrect) => {
+      console.log(result)
       if (result === 'ye\nyeye\nyeyeye\nyeyeyeye\nyeyeye\nyeye\nye') {
         correct(`Pyramid of Ye complete.`)
       } else {
