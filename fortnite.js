@@ -1,4 +1,4 @@
-import chatData from './chat_data';
+import chatData from './chat_data.js';
 
 export function howManyKills(kills) {
   /*

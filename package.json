@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "koans": "node koans.test.js",
-    "fortnite": "node chugjug.test.js"
+    "fortnite": "node fortnite.test.js"
 
   },
   "author": "",

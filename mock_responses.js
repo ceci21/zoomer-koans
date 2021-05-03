@@ -23,3 +23,12 @@ export const chronologicalMessages = [
   '😥',
   'OK boomer 🙄',
 ];
+
+export const ninjaFoxMessages = [
+  'i found nothing on this safari',
+  'i checked the upstars of that whorese',
+  'house*',
+  'but not the underneath yet',
+  '😥',
+  'OK boomer 🙄',
+];
