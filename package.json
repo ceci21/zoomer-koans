@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node koans.test.js"
+    "koans": "node koans.test.js",
+    "fortnite": "node chugjug.test.js"
+
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module"
 }

@@ -1,5 +1,5 @@
-const { define, expect, test, spy } = require('./lib/assert.js')
-const koans = require('./koans.js')
+import { define, expect, test, spy } from './lib/assert.js';
+import koans from './koans.js';
 
 const {
   giveMeAString,
@@ -246,24 +246,3 @@ define('For loops', () => {
     });
   });
 });
-
-// define('while loops', () => {
-//   // add content to while loop
-//   // add condition to while loop
-//   // infinite loop (can i prevent this from going out of hand?)
-// });
-
-// define('Arrays', () => {
-//   // fill in array numbers 1-5
-//   // access property on an array
-//   // modify variable to access property on an array
-//   // push a value onto array
-// });
-
-// define('Objects', () => {
-//   // create an empty object
-//   // modify property on an object
-//   // add a property on an object
-//   // access property with dot notation
-//   // access property with bracket notation
-// });
